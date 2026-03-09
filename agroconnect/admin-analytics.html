@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - AgroConnect Admin</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-leaf"></i> AgroConnect</h2>
+                <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin-users.html"><i class="fas fa-users"></i> User Management</a></li>
+                <li><a href="admin-farmers.html"><i class="fas fa-tractor"></i> Farmer Management</a></li>
+                <li><a href="admin-products.html"><i class="fas fa-box-open"></i> Product Management</a></li>
+                <li><a href="admin-categories.html"><i class="fas fa-tags"></i> Category Management</a></li>
+                <li><a href="admin-orders.html"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
+                <li><a href="admin-delivery.html"><i class="fas fa-truck"></i> Delivery Management</a></li>
+                <li class="active"><a href="admin-analytics.html"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+                <li><a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-profile">
+                    <i class="fas fa-bell"></i>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=10b981&color=fff" alt="Admin Profile">
+                    <span class="admin-name">Admin</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <h1 class="page-title">Analytics</h1>
+                <!-- Charts Section -->
+                <section class="charts-section">
+                    <div class="chart-card">
+                        <h3>Sales & Revenue Trends</h3>
+                        <div class="chart-container">
+                            <canvas id="salesLineChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>User Growth (Farmers vs Customers)</h3>
+                        <div class="chart-container">
+                            <canvas id="userGrowthBarChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Category-wise Sales</h3>
+                        <div class="chart-container">
+                            <canvas id="categoryPieChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Delivery Statistics</h3>
+                        <div class="chart-container">
+                            <canvas id="deliveryDoughnutChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Tables / Lists Section -->
+                <section class="data-section">
+                    <!-- Top Selling Products -->
+                    <div class="data-card half-width">
+                        <h3>Top-Selling Products</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Category</th>
+                                    <th>Sales</th>
+                                    <th>Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Organic Tomatoes</td>
+                                    <td>Vegetables</td>
+                                    <td>3,240</td>
+                                    <td>$16,200</td>
+                                </tr>
+                                <tr>
+                                    <td>Basmati Rice</td>
+                                    <td>Grains</td>
+                                    <td>2,890</td>
+                                    <td>$23,120</td>
+                                </tr>
+                                <tr>
+                                    <td>Fresh Apples</td>
+                                    <td>Fruits</td>
+                                    <td>2,450</td>
+                                    <td>$14,700</td>
+                                </tr>
+                                <tr>
+                                    <td>Raw Honey</td>
+                                    <td>Dairy/Pantry</td>
+                                    <td>1,900</td>
+                                    <td>$19,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Low Stock Alerts -->
+                    <div class="data-card half-width">
+                        <h3>Low Stock Alerts</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Farmer</th>
+                                    <th>Stock Left</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Green Peas</td>
+                                    <td>John Doe</td>
+                                    <td>12 kg</td>
+                                    <td class="status-low">Critical</td>
+                                </tr>
+                                <tr>
+                                    <td>Almonds</td>
+                                    <td>Jane Smith</td>
+                                    <td>5 kg</td>
+                                    <td class="status-low">Critical</td>
+                                </tr>
+                                <tr>
+                                    <td>Carrots</td>
+                                    <td>Mike Johnson</td>
+                                    <td>20 kg</td>
+                                    <td class="status-warning">Warning</td>
+                                </tr>
+                                <tr>
+                                    <td>Wheat Flour</td>
+                                    <td>Sarah Lee</td>
+                                    <td>18 kg</td>
+                                    <td class="status-warning">Warning</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Farmer Performance Rankings -->
+                    <div class="data-card full-width">
+                        <h3>Top Performing Farmers</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Farmer Name</th>
+                                    <th>Products Listed</th>
+                                    <th>Orders Fulfilled</th>
+                                    <th>Rating</th>
+                                    <th>Total Sales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Robert Evans</td>
+                                    <td>45</td>
+                                    <td>1,200</td>
+                                    <td><i class="fas fa-star text-yellow"></i> 4.9</td>
+                                    <td>$45,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Alice Green</td>
+                                    <td>32</td>
+                                    <td>980</td>
+                                    <td><i class="fas fa-star text-yellow"></i> 4.8</td>
+                                    <td>$38,400</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>David Brown</td>
+                                    <td>60</td>
+                                    <td>850</td>
+                                    <td><i class="fas fa-star text-yellow"></i> 4.7</td>
+                                    <td>$31,200</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Emma White</td>
+                                    <td>25</td>
+                                    <td>790</td>
+                                    <td><i class="fas fa-star text-yellow"></i> 4.9</td>
+                                    <td>$28,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="admin-script.js"></script>
+</body>
+
+</html>

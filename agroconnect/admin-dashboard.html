@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroConnect Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-leaf"></i> AgroConnect</h2>
+                <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="admin-users.html"><i class="fas fa-users"></i> User Management</a></li>
+                <li><a href="admin-farmers.html"><i class="fas fa-tractor"></i> Farmer Management</a></li>
+                <li><a href="admin-products.html"><i class="fas fa-box-open"></i> Product Management</a></li>
+                <li><a href="admin-categories.html"><i class="fas fa-tags"></i> Category Management</a></li>
+                <li><a href="admin-orders.html"><i class="fas fa-shopping-cart"></i> Order Management</a></li>
+                <li><a href="admin-delivery.html"><i class="fas fa-truck"></i> Delivery Management</a></li>
+                <li><a href="admin-analytics.html"><i class="fas fa-chart-pie"></i> Analytics</a></li>
+                <li><a href="admin-notifications.html"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="admin-settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="header-profile">
+                    <i class="fas fa-bell"></i>
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=10b981&color=fff" alt="Admin Profile">
+                    <span class="admin-name">Admin</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-wrapper">
+                <h1 class="page-title">Smart Analytics Dashboard</h1>
+
+                <!-- Summary Cards -->
+                <section class="summary-cards">
+                    <div class="card" onclick="window.location.href='admin-users.html'" style="cursor: pointer;"
+                        title="Go to User Management">
+                        <div class="card-icon blue"><i class="fas fa-users"></i></div>
+                        <div class="card-info">
+                            <h3>Total Users</h3>
+                            <p>12,450</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="window.location.href='admin-farmers.html'" style="cursor: pointer;"
+                        title="Go to Farmer Management">
+                        <div class="card-icon green"><i class="fas fa-tractor"></i></div>
+                        <div class="card-info">
+                            <h3>Farmers</h3>
+                            <p>3,210</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="window.location.href='admin-users.html'" style="cursor: pointer;"
+                        title="Go to User Management">
+                        <div class="card-icon orange"><i class="fas fa-user-friends"></i></div>
+                        <div class="card-info">
+                            <h3>Customers</h3>
+                            <p>9,240</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="window.location.href='admin-products.html'" style="cursor: pointer;"
+                        title="Go to Product Management">
+                        <div class="card-icon purple"><i class="fas fa-box-open"></i></div>
+                        <div class="card-info">
+                            <h3>Products</h3>
+                            <p>45,120</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="window.location.href='admin-orders.html'" style="cursor: pointer;"
+                        title="Go to Order Management">
+                        <div class="card-icon red"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="card-info">
+                            <h3>Total Orders</h3>
+                            <p>89,300</p>
+                        </div>
+                    </div>
+                    <div class="card" onclick="window.location.href='admin-analytics.html'" style="cursor: pointer;"
+                        title="Go to Analytics">
+                        <div class="card-icon emerald"><i class="fas fa-dollar-sign"></i></div>
+                        <div class="card-info">
+                            <h3>Total Revenue</h3>
+                            <p>$1.2M</p>
+                        </div>
+                    </div>
+                </section>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="admin-script.js"></script>
+</body>
+
+</html>
